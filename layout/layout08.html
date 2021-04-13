@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Layout08</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    #wrap {
+      width: 100%;
+      height: 1000px;
+      font-size: 30px;
+      text-align: center;
+      text-transform: uppercase;
+      color: black;
+    }
+    #header {
+      width: 100%;
+      height: 100px;
+    }
+    #header #header-top {
+      width: 100%;
+      height: 50px;
+      line-height: 50px;
+      background-color: #ffcdd2;
+    }
+    #header #header-nav {
+      width: 100%;
+      height: 50px;
+      line-height: 50px;
+      background-color: #ef9a9a;
+    }
+    #banner {
+      width: 100%;
+      height: 300px;
+      line-height: 300px;
+      background-color: #ffebee;
+    }
+    #cont {
+      width: 100%;
+      height: 550px;
+    }
+    #cont #cont1 {
+      width: 100%;
+      height: 50px;
+      line-height: 50px;
+      background-color: #f3e5f5;
+    }
+    #cont #cont2 {
+      width: 100%;
+      height: 250px;
+      line-height: 250px;
+      background-color: #e1bee7;
+    }
+    #cont #cont3 {
+      width: 100%;
+      height: 250px;
+      line-height: 250px;
+      background-color: #ce93d8;
+    }
+    #footer {
+      width: 100%;
+      height: 150px;
+    }
+    #footer #footer-nav {
+      width: 100%;
+      height: 50px;
+      line-height: 50px;
+      background-color: #e3f2fd;
+    }
+    #footer #footer-info{
+      width: 100%;
+      height: 100px;
+      line-height: 100px;
+      background-color: #bbdefb;
+    }
+    .container {
+      width: 1000px;
+      height: inherit;
+      margin: 0 auto;
+      background-color: rgba(255, 255, 255, 0.5);
+    }
+  </style>
+</head>
+<body>
+  <div id="wrap">
+    <div id="header">
+      <div id="header-top">
+        <div class="container">header-top</div>
+      </div>
+      <div id="header-nav">
+        <div class="container">header-nav</div>
+      </div>
+    </div>
+    <div id="banner">
+      <div class="container">banner</div>
+    </div>
+    <div id="cont">
+      <div id="cont1">
+        <div class="container">contents1</div>
+      </div>
+      <div id="cont2">
+        <div class="container">contents2</div>
+      </div>
+      <div id="cont3">
+        <div class="container">contents3</div>
+      </div>
+    </div>
+    <div id="footer">
+      <div id="footer-nav">
+        <div class="container">footer-nav</div>
+      </div>
+      <div id="footer-info">
+        <div class="container">footer-info</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

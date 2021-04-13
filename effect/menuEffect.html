@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MenuEffect01 - jquery</title>
+  <style>
+    @font-face {
+      font-family: 'S-CoreDream-3Light';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+}
+    :root {
+      font-size: 16px;
+    }
+    
+    * {
+      padding: 0;
+      margin: 0;
+    }
+    body {
+      position: relative;
+      background: url(img/img_h10.png) no-repeat center center;
+      background-size: cover;
+      /* background-color: rgb(255, 238, 255);
+      background-blend-mode: multiply; */
+      height: 100vh;
+    }
+    body::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100vh;
+      background-color: rgba(159, 218, 243, 0.5);
+      z-index: -1;
+    }
+
+    /* .info */
+    .info {
+      font-family: 'S-CoreDream-3Light';
+      position: absolute;
+    }
+    .info h1 {
+      
+    }
+    .info.left {
+      left: 20px; top: 20px;
+    }
+    .info.right {
+      right: 20px; top: 20px;
+    }
+    .info.bottom {
+      left: 20px; bottom: 20px;
+    }
+    .info li {
+      font-size: 1rem;
+      line-height: 1.4;
+      list-style: none;
+    }
+    .info li a {
+      text-decoration: none;
+      color: black;
+      border: 1px dashed #000;
+      border-radius: 50%;
+      width: 25px;
+      height: 25px;
+      text-align: center;
+      line-height: 26px;
+      display: inline-block;
+      font-size: 0.8rem;
+      margin: 3px;
+    }
+
+    @media (max-width:600px){
+      .info.right{display: none;}
+    }
+
+    /* option */
+
+    #tab-menu {
+      font-family: 'S-CoreDream-3Light';
+      max-width: 600px;
+      background: #eaa110;
+      position: absolute;
+      left: 50%; 
+      top: 20vh;
+      transform: translate(-50%);
+      border-radius: 5px;
+    }
+    #tab-btn ul {
+      display: flex;
+    }
+    #tab-btn li {
+      flex-basis: 20%;
+      text-align: center;
+      list-style: none;
+    }
+    #tab-btn li a {
+      text-decoration: none;
+      color: #fff;
+      padding: 20px 20px 15px 20px;
+      display: block;
+    }
+    #tab-btn li.active a {
+      border-bottom: 3px solid #2b110e;
+      color: #2b110e;
+    }
+    #tab-cont {
+      background: #fff;
+      padding: 20px;
+      border-radius: 0 0 5px 5px;
+      font-size: 18px;
+      line-height: 1.6;
+    }
+    #tab-cont > div {
+      display: none;
+    }
+    #tab-cont > div:nth-child(1){
+      display: block;
+    }
+
+
+  </style>
+</head>
+<body>
+  <div class="info left">
+    <h1>TabMenu Effect01 - jquery</h1>
+    <p>탭 메뉴 이펙트</p>
+  </div>
+
+  <nav class="info right">
+    <ul>
+      <li><a href="menuEffect01-jquery.html">1</a> <a href="menuEffect01-javascript.html">1</a></li>
+      <li><a href="menuEffect02-jquery.html">2</a> <a href="menuEffect02-javascript.html">2</a></li>
+      <li><a href="menuEffect03-jquery.html">3</a> <a href="menuEffect03-javascript.html">3</a></li>
+      <li><a href="menuEffect04-jquery.html">4</a> <a href="menuEffect04-javascript.html">4</a></li>
+      <li><a href="menuEffect05-jquery.html">5</a> <a href="menuEffect05-javascript.html">5</a></li>
+      <li><a href="menuEffect06-jquery.html">6</a> <a href="menuEffect06-javascript.html">6</a></li>
+      <li><a href="menuEffect07-jquery.html">7</a> <a href="menuEffect07-javascript.html">7</a></li>
+      <li><a href="menuEffect08-jquery.html">8</a> <a href="menuEffect08-javascript.html">8</a></li>
+      <li><a href="menuEffect09-jquery.html">9</a> <a href="menuEffect09-javascript.html">9</a></li>
+      <li><a href="menuEffect10-jquery.html">10</a> <a href="menuEffect10-javascript.html">10</a></li>
+    </ul>
+  </nav>
+    
+  <!-- contents -->
+    <section class="contents">
+      <div id="tab-menu">
+        <div id="tab-btn">
+          <ul>
+            <li class="active"><a href="#">Tab1</a></li>
+            <li><a href="#">Tab2</a></li>
+            <li><a href="#">Tab3</a></li>
+            <li><a href="#">Tab4</a></li>
+            <li><a href="#">Tab5</a></li>
+          </ul>
+        </div>
+        <div id="tab-cont">
+          <div>1. 대한민국 시장 점유율 1위의 포털로, 2019년 8월 기준 대한민국 내 검색 점유율 58.8%을 기록, 현재 대한민국에서 가장 많은 사람들이 사용하는 인터넷 포털 사이트이다. </div>
+          <div>2. 초록색과 하얀색 검색창으로 널리 알려져 있으며, 지식iN 서비스로 수천만의 엔트리를 확보하였다. 2013년에는 강원도 춘천시에 국내 인터넷기업 중 최초로 자체 데이터 센터 '각'을 준공했다.</div>
+          <div>3. 현재 네이버의 서비스는 크게 검색, 사전, 커뮤니티, 뉴스, 생활, 문화, 쇼핑, 웹툰, 지도 등으로 나누어 볼 수 있다. 네이버 검색은 네이버 내부 컨텐츠 검색, 웹문서 검색, 지역정보 검색, 지도검색, 교통검색, 인물검색, 실시간 급상승 검색어 등을 제공한다.</div>
+          <div>4. 블로그나 카페, 사용자가 올린 질문이나 궁금한 내용에 대해 다른 사용자들이 자발적으로 답을 달면서 지식을 주고받는 지식iN 등이 대표적인 서비스다. 한편, 2000년에 서비스를 시작했던 쥬니어네이버 게임랜드는 18여 년만인 2019년 2월, 어도비의 플래시가 2020년에 서비스를 종료한다.</div>
+          <div>5. 지식iN(지식인)은 네이버 사용자 사이의 지식 교류 서비스이다. 사용자가 올린 질문이나 궁금한 내용, 고민에 대해 다른 사용자들이 자발적으로 답을 달면서 지식을 주고받는다. 2002년 10월 정식 서비스를 시작했으며, 2012년 9월 기준으로, 올라온 질문의 수는 1억 건을 넘어섰다.</div>
+        </div>
+      </div>
+    </section>
+  <!-- //contents -->
+</body>
+</html>

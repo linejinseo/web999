@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Effect01-jquery</title>
+    <link rel="stylesheet" href="skin/prism.css">
+    <style>
+        @font-face {
+          font-family: 'NEXON Lv1 Gothic OTF';
+          src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF.woff') format('woff');
+          font-weight: normal;
+          font-style: normal;
+        }
+        @font-face {
+          font-family: 'TmonMonsori';
+          src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/TmonMonsori.woff') format('woff');
+          font-weight: normal;
+          font-style: normal;
+        }
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+        ul {
+            list-style: none;
+        }
+        a {
+            text-decoration: none;
+        }
+        #wrap {
+          margin: 3vh;
+          height: 94vh;
+          border: 8px solid #0E43F1;
+          border-radius: 20px;
+        }
+        #contents {
+          border: 8px solid #50B5F9;
+          height: 100%;
+          border-radius: 12px;
+          font-family: 'TmonMonsori';
+          color: #0E43F1;
+          padding: 3vw;
+          overflow: hidden;
+        }
+        #header {
+          border-bottom: 1px solid #0E43F1;
+          display: flex;
+          justify-content: space-between;
+        }
+        #header h1 {
+          padding-bottom: 30px;
+        }
+
+        #header h1 a {
+          color: #0E43F1;
+          font-size: 90px;
+          line-height: 1.1;
+        }
+        #header h1 em {
+          font-style: normal;
+          font-size: 20px;
+          font-family: 'NEXON Lv1 Gothic OTF';
+          text-transform: uppercase;
+          vertical-align: -15px;
+        }
+        #header .nav li {
+          display: inline;
+        }
+        #header .nav li a {
+          font-family: 'NEXON Lv1 Gothic OTF';
+          border: 1px dashed #0E43F1;
+          width: 30px;
+          height: 30px;
+          line-height: 30px;
+          text-align: center;
+          display: inline-block;
+          border-radius: 50%;
+          font-size: 14px;
+          margin-bottom: 3px;
+        }
+        #header .nav li.active a {
+          background: #0E43F1;
+          color: #fff;
+        }
+        #header .nav li a:hover {
+          border-style: solid;
+        }
+        .content {
+          display: flex;
+          padding-top: 50px;
+          justify-content: space-between;
+          flex-wrap: nowrap;
+        }
+        .content .sample {
+          width: 60%;
+          height: 570px;
+          background: #c0ebfd;
+          border-radius: 10px;
+        }
+        .content .code {
+          width: 38%;
+          background: #f1f1f1;
+          border-radius: 10px;
+        }
+        .sample {
+          position: relative;
+          font-family: 'NEXON Lv1 Gothic OTF';
+        }
+        /* option */
+        #tab-menu {
+          width: 600px;
+          background: #0E43F1;
+          position: absolute;
+          left: 50%; 
+          top: 50%;
+          transform: translate(-50%, -50%);
+          border-radius: 5px;
+        }
+
+        #tab-btn ul {
+          display: flex;
+        }
+        #tab-btn li {
+          flex-basis: 20%;
+          text-align: center;
+          list-style: none;
+        }
+        #tab-btn li a {
+          text-decoration: none;
+          color: #fff;
+          padding: 20px 20px 15px 20px;
+          display: block;
+        }
+        #tab-btn li.active a {
+          border-bottom: 3px solid #2b110e;
+          color: #2b110e;
+        }
+        #tab-cont {
+          background: #fff;
+          padding: 20px;
+          border-radius: 0 0 5px 5px;
+          font-size: 18px;
+          line-height: 1.6;
+          color: black;
+        }
+        #tab-cont > div {
+          display: none;
+        }
+        #tab-cont > div:nth-child(1){
+          display: block;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <main id="contents">
+          <header id="header">
+            <h1><a href="menuEffect-cover.html">탭 메뉴</a> <em>jQuery</em></h1>
+            <nav class="nav">
+              <ul>
+                <li><a href="menuEffect01-javascript.html" title="메뉴 이펙트 자바스크립트01">1</a></li>
+                <li><a href="menuEffect02-javascript.html" title="메뉴 이펙트 자바스크립트02">2</a></li>
+                <li><a href="menuEffect03-javascript.html" title="메뉴 이펙트 자바스크립트03">3</a></li>
+                <li><a href="menuEffect04-javascript.html" title="메뉴 이펙트 자바스크립트04">4</a></li>
+                <li><a href="menuEffect05-javascript.html" title="메뉴 이펙트 자바스크립트05">5</a></li>
+                <li><a href="menuEffect06-javascript.html" title="메뉴 이펙트 자바스크립트06">6</a></li>
+                <li><a href="menuEffect07-javascript.html" title="메뉴 이펙트 자바스크립트07">7</a></li>
+                <li><a href="menuEffect08-javascript.html" title="메뉴 이펙트 자바스크립트08">8</a></li>
+                <li><a href="menuEffect09-javascript.html" title="메뉴 이펙트 자바스크립트09">9</a></li>
+                <li><a href="menuEffect10-javascript.html" title="메뉴 이펙트 자바스크립트10">10</a></li>
+              </ul>
+              <ul>
+                <li class="active"><a href="menuEffect01-jquery.html" title="메뉴 이펙트 제이쿼리01">1</a></li>
+                <li><a href="menuEffect02-jquery.html" title="메뉴 이펙트 제이쿼리02">2</a></li>
+                <li><a href="menuEffect03-jquery.html" title="메뉴 이펙트 제이쿼리03">3</a></li>
+                <li><a href="menuEffect04-jquery.html" title="메뉴 이펙트 제이쿼리04">4</a></li>
+                <li><a href="menuEffect05-jquery.html" title="메뉴 이펙트 제이쿼리05">5</a></li>
+                <li><a href="menuEffect06-jquery.html" title="메뉴 이펙트 제이쿼리06">6</a></li>
+                <li><a href="menuEffect07-jquery.html" title="메뉴 이펙트 제이쿼리07">7</a></li>
+                <li><a href="menuEffect08-jquery.html" title="메뉴 이펙트 제이쿼리08">8</a></li>
+                <li><a href="menuEffect09-jquery.html" title="메뉴 이펙트 제이쿼리09">9</a></li>
+                <li><a href="menuEffect10-jquery.html" title="메뉴 이펙트 제이쿼리10">10</a></li>
+              </ul>
+            </nav>
+          </header>
+          <section class="content">
+            <div class="sample">
+              <div id="tab-menu">
+                <div id="tab-btn">
+                  <ul>
+                    <li class="active"><a href="#">Tab1</a></li>
+                    <li><a href="#">Tab2</a></li>
+                    <li><a href="#">Tab3</a></li>
+                    <li><a href="#">Tab4</a></li>
+                    <li><a href="#">Tab5</a></li>
+                  </ul>
+                </div>
+                <div id="tab-cont">
+                  <div>1. 대한민국 시장 점유율 1위의 포털로, 2019년 8월 기준 대한민국 내 검색 점유율 58.8%을 기록, 현재 대한민국에서 가장 많은 사람들이 사용하는 인터넷 포털 사이트이다. </div>
+                  <div>2. 초록색과 하얀색 검색창으로 널리 알려져 있으며, 지식iN 서비스로 수천만의 엔트리를 확보하였다. 2013년에는 강원도 춘천시에 국내 인터넷기업 중 최초로 자체 데이터 센터 '각'을 준공했다.</div>
+                  <div>3. 현재 네이버의 서비스는 크게 검색, 사전, 커뮤니티, 뉴스, 생활, 문화, 쇼핑, 웹툰, 지도 등으로 나누어 볼 수 있다. 네이버 검색은 네이버 내부 컨텐츠 검색, 웹문서 검색, 지역정보 검색, 지도검색, 교통검색, 인물검색, 실시간 급상승 검색어 등을 제공한다.</div>
+                  <div>4. 블로그나 카페, 사용자가 올린 질문이나 궁금한 내용에 대해 다른 사용자들이 자발적으로 답을 달면서 지식을 주고받는 지식iN 등이 대표적인 서비스다. 한편, 2000년에 서비스를 시작했던 쥬니어네이버 게임랜드는 18여 년만인 2019년 2월, 어도비의 플래시가 2020년에 서비스를 종료한다.</div>
+                  <div>5. 지식iN(지식인)은 네이버 사용자 사이의 지식 교류 서비스이다. 사용자가 올린 질문이나 궁금한 내용, 고민에 대해 다른 사용자들이 자발적으로 답을 달면서 지식을 주고받는다. 2002년 10월 정식 서비스를 시작했으며, 2012년 9월 기준으로, 올라온 질문의 수는 1억 건을 넘어섰다.</div>
+                </div>
+              </div>
+            </div>
+            <div class="code">
+<pre class="language-js"><code>const tabBtn = $("#tab-btn > ul > li");   //각각의 버튼을 변수에 저장
+const tabCont = $("#tab-cont > div");     //각각의 콘텐츠를 변수에 저장
+tabBtn.click(function(){
+  let target = $(this);
+  let index = target.index();
+  //alert(index);
+  tabBtn.removeClass("active");
+  target.addClass("active");
+  tabCont.css("display","none");
+  tabCont.eq(index).css("display","block");
+});
+</code></pre>
+            </div>
+          </section>
+        </main>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="skin/prism.js"></script>
+    <script>
+      const tabBtn = $("#tab-btn> ul> li"); //각각의 버튼을 변수에 저장
+      const tabCont = $("#tab-cont> div");  //각각의 컨텐츠를 변수에 저장
+
+      tabBtn.click(function(){
+        let target = $(this);
+        let index = target.index();
+        tabBtn.removeClass("active");
+        target.addClass("active");
+        tabCont.css("display", "none");
+        tabCont.eq(index).css("display", "block");
+      });
+    </script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    #wrap {
+      width: 100%;
+      background: #e0f7fa;
+    }
+    #main {
+      width: 1200px;
+      margin: 0 auto;
+    }
+    header {
+      width: 100%;
+      height: 100px;
+      background-color: #81d4fa;
+    }
+    .clearfix::after {
+      content: '';
+      clear: both;
+      display: block;
+    }
+    aside {
+      float: left;
+      width: 30%;
+      height: 600px;
+      background-color: #4fc3f7;
+    }
+    .sec1 {
+      float: left;
+      width: 70%;
+      height: 200px;
+      background-color: #29b6f6;
+    }
+    .sec2 {
+      float: left;
+      width: 70%;
+      height: 200px;
+      background-color: #03a9f4;
+    }
+    .sec3 {
+      float: left;
+      width: 70%;
+      height: 200px;
+      background-color: #039be5;
+    }
+    footer {
+      clear: both;
+      width: 100%;
+      height: 100px;
+      background-color: #0288d1;
+    }
+
+    @media (max-width: 1220px) {
+      #main {width: 100%;}
+      header {height: 150px;}
+      .sec1 {
+      width: 70%;
+      height: 300px;
+      }
+      .sec2 {
+        width: 70%;
+        height: 300px;
+      }
+      .sec3 {
+        width: 100%;
+        height: 300px;
+      }
+    }
+    @media (max-width: 900px) {
+      #main {width: 100%;}
+      header {height: 150px;}
+      aside {
+      width: 100%;
+      height: 150px;
+      }
+      .sec1 {       
+        width: 50%;
+        height: 300px;
+      }
+      .sec2 {
+        width: 50%;
+        height: 300px;
+      }
+      .sec3 {
+        width: 100%;
+        height: 200px;
+      }
+    }
+    @media (max-width: 600px) {
+      #main {width: 100%;}
+      header {height: 200px;}
+      aside {
+      width: 100%;
+      height: 300px;
+      }
+      .sec1 {
+        width: 100%;
+        height: 300px;
+      }
+      .sec2 {
+        width: 100%;
+        height: 300px;
+      }
+      .sec3 {
+        width: 100%;
+        height: 300px;
+      }
+    }
+
+
+
+  </style>
+</head>
+<body>
+  <div id="wrap">
+    <main id="main">
+      <header></header>
+      <aside></aside>
+      <section class="sec1"></section>
+      <section class="sec2"></section>
+      <section class="sec3"></section>
+      <footer></footer>
+    </main>
+  </div>
+</body>
+</html>
